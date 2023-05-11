@@ -13,7 +13,7 @@ class Solution {
         if(d[n] != 0){
             return d[n]
         }
-        d[n] = (pivo(n - 1) % 1234567 + pivo(n - 2) % 1234567) % 1234567
+        d[n] = (pivo(n - 1) + pivo(n - 2)) % 1234567
         return d[n]
     }
 }
