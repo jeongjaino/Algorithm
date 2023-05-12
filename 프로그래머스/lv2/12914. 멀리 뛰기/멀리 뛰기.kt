@@ -1,9 +1,7 @@
 class Solution {
     private lateinit var d : LongArray
     fun solution(n: Int): Long {
-        d = LongArray(2001)
-        d[1] = 1
-        d[2] = 2
+        d = LongArray(n + 1)
         return jump(n)
     }
     
