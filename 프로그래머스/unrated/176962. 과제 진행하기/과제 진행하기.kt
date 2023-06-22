@@ -44,17 +44,10 @@ class Solution {
 
     // aTime > bTime
     fun getTime(aTime : String, bTime : String): Int{
-        val ah = aTime.slice(0 until 2).toInt()
-        val bh = bTime.slice(0 until 2).toInt()
-        val am = aTime.slice(3 until 5).toInt()
-        val bm = bTime.slice(3 until 5).toInt()
-        var result = (ah - bh) * 60
-        if(am - bm > 0){
-            result += (am - bm)
-        }
-        else{
-            result -= (bm - am)
-        }
-        return result
+        var amin = aTime.replace(":", "").toInt()
+        amin = amin / 100 * 60 + amin % 100
+        var bmin = bTime.replace(":", "").toInt()
+        bmin = bmin / 100 * 60 + bmin % 100
+        return amin - bmin
     }
 }
